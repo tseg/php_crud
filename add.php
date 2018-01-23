@@ -3,12 +3,13 @@
 	
 	if(isset($_POST['Submit'])){
 		$name = $_POST['name'];
+		$fname = $_POST['fname'];
 		//insert data to database        
         $sql = "INSERT INTO department(name) VALUES(:name)";
         $query = $dbConn->prepare($sql);
                 
         $query->bindparam(':name', $name);
-        $query->execute();
+		$query->execute();
         
         // Alternative to above bindparam and execute
         //$query->execute(array(':name' => $name));

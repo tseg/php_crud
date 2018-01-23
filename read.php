@@ -4,10 +4,10 @@ include_once("config.php");
  
 //fetching data in descending order (lastest entry first)
 $result = $dbConn->query("SELECT * FROM department ORDER BY ID DESC");
+var_dump($result);
 ?>
- 
 <html>
-<head>    
+<head>   
     <title>Read Data</title>
 </head>
  
@@ -22,7 +22,7 @@ $result = $dbConn->query("SELECT * FROM department ORDER BY ID DESC");
 		<td>Options</td>
     </tr>
     <?php     
-    while($row = $result->fetch(PDO::FETCH_ASSOC)) {         
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
 		echo "<td>".$row['ID']."</td>";
         echo "<td>".$row['Name']."</td>";    

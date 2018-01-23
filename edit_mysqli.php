@@ -4,15 +4,15 @@ include_once("config_mysqli.php");
  
 if(isset($_POST['update']))
 {    
+
     $id = $_POST['id'];
     $name=$_POST['name'];
   
     // checking empty fields
     if(empty($name)) {    
             
-        if(empty($name)) {
             echo "<font color='red'>Name field is empty.</font><br/>";
-        }       
+       
     } else {    
         //updating the table
         $result = mysqli_query($mysqli, "UPDATE department SET Name='$name' WHERE ID=$id");
